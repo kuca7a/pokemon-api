@@ -1,0 +1,155 @@
+.heading {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  color: #f2e8cf;
+  text-align: center;
+}
+
+body {
+  background-color: #bc4749;
+  font-size: 24px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column; /* Arrange items vertically by default */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the top, adjust as needed */
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
+  margin: 0; /* Remove default body margin */
+  padding: 20px; /* Add some padding around content */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+button {
+  padding: 10px 20px; /* Add horizontal padding for better button shape */
+  cursor: pointer;
+  background-color: #a7c957;
+  border: 3px solid #6a994e;
+  border-bottom: 6px solid #386641; /* Bottom border with a different color */
+  border-radius: 8px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  transition: transform 0.05s, box-shadow 0.3s;
+  box-shadow: inset 4px 4px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 10px; /* Add some space above buttons if they are stacked */
+}
+
+button:hover {
+  background-color: #6a994e;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+button:active {
+  transform: translateY(0.3em); /* Button moves down when clicked */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  margin-bottom: 15px; /* Add some space below the input field */
+  width: 100%; /* Make input take full width on mobile */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column; /* Stack form elements on mobile */
+  align-items: center; /* Center form elements horizontally */
+  width: 90%; /* Adjust width for mobile as needed */
+  max-width: 500px; /* Optional: set a maximum width for larger screens */
+  margin-bottom: 20px; /* Add some space below the form */
+}
+
+#button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons on mobile */
+  align-items: center; /* Center buttons horizontally */
+  gap: 10px; /* Add spacing between buttons */
+  width: 90%; /* Match form width for consistency */
+  max-width: 500px; /* Optional: set a maximum width for larger screens */
+}
+
+@media (min-width: 768px) {
+  body {
+    align-items: center; /* Keep body centered on larger screens */
+  }
+
+  #form-container {
+    flex-direction: row; /* Arrange form elements in a row on larger screens */
+    justify-content: center; /* Center the form horizontally */
+    gap: 20px; /* Add spacing between input and buttons */
+    width: auto; /* Adjust width based on content */
+  }
+
+  input {
+    width: auto; /* Allow input to size based on content */
+    flex-grow: 1; /* Allow input to take up available space */
+    margin-bottom: 0; /* Remove bottom margin when in a row */
+  }
+
+  #button-container {
+    flex-direction: row; /* Arrange buttons in a row on larger screens */
+    justify-content: center; /* Center buttons horizontally */
+    width: auto; /* Adjust width based on content */
+  }
+
+  button {
+    margin-top: 0; /* Remove top margin when in a row */
+  }
+}
+
+#pokemon_cards {
+  display: grid; /* Use grid layout for responsiveness */
+  grid-template-columns: 1fr; /* One column on mobile */
+  gap: 20px; /* Spacing between cards */
+  justify-items: center; /* Center items within each grid cell */
+  padding: 20px; /* Add padding around the grid */
+}
+
+.pokemon-card {
+  border: 2px solid #fdd835;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fffde7;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Adjust width for mobile */
+  box-sizing: border-box;
+  max-width: 400px; /* Optional: set a maximum width for individual cards */
+}
+
+.pokemon-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.pokemon-card p {
+  margin-bottom: 8px;
+  font-family: sans-serif;
+}
+
+.pokemon-card p strong {
+  font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  #pokemon_cards {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Adjust min width as needed */
+  }
+
+  .pokemon-card {
+    width: auto; /* Allow cards to size based on grid */
+  }
+}

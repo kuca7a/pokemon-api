@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap");
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <h1 class="heading">Pokemon API Project</h1>
+
+    <input type="text" placeholder="Enter Pokemon name" id="input1" />
+
+    <button onclick="fetchDataPokemon1() ">Search</button>
+
+    <div class="pokemonCard">
+      <img
+        src="index.js"
+        alt="Pokemon image"
+        id="pokemoneSprite"
+        style="display: none"
+      />
+
+      <p id="pokemon_name"></p>
+      <p id="pokemon_type"></p>
+      <p id="pokemon_abilities"></p>
+      <p id="pokemon_stats"></p>
+      <p id="pokemon_height"></p>
+      <p id="pokemon_weight"></p>
+    </div>
+    <!-- <div>
+      <input type="text" placeholder="Enter Pokemon name" id="input2" />
+      <button onclick="fetchDataPokemon2()">Search</button>
+      <img
+        src="index.js"
+        alt="Pokemon image"
+        id="pokemoneSprite2"
+        style="display: none"
+      />
+
+      <p id="pokemon_name2">Name:</p>
+      <p id="pokemon_type2">Type:</p>
+      <p id="pokemon_abilities2">Abilities:</p>
+      <p id="pokemon_stats2">Stats:</p>
+      <p id="pokemon_height2">Height:</p>
+      <p id="pokemon_weight2">Weight:</p>
+    </div> -->
+
+    <input type="text" placeholder="Enter Pokemon name" id="input3" />
+
+    <button onclick="getPokemonList()">Show All Pokemon</button>
+    <button id="loadMoreBtn">Load More</button>
+    <button onclick="clearInput()">Clear</button>
+
+    <div id="pokemon_cards"></div>
+
+    <div style="width: 100%; max-width: 600px; margin: auto">
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <div style="width: 100%; max-width: 600px; margin: 40px auto">
+      <canvas id="radarChart"></canvas>
+    </div>
+
+    <p id="comparison_result"></p>
+    <script src="app.js"></script>
+  </body>
+</html>
