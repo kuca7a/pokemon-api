@@ -1,3 +1,3 @@
 ﻿# pokemon-api
 
-vanilla js pokemone api app practice
+vanilla js pokemon api app practice
